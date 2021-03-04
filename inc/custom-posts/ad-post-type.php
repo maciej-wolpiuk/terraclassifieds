@@ -103,6 +103,9 @@ if (!function_exists('terra_ad_category_column_value')) {
 			case 'category' :
 				echo get_the_term_list($post -> ID, 'ad_category', '', ', ', '');
 				break;
+			case 'id' :
+				echo $post -> ID;
+				break;
 		}
 	}
 
@@ -149,6 +152,10 @@ function override_category_field_callback( $field_args, $field ) {
 	if ( ! $field->should_show() ) {
 		return;
 	}
+	
+	global $post;
+	$post_slug = $post->post_name;
+	$page_edit_ad_slug = terraclassifieds_get_option( '_tc_slug_edit_advert', 'edit-ad' );
 
 	$field->peform_param_callback( 'before_row' );
 
@@ -167,7 +174,12 @@ function override_category_field_callback( $field_args, $field ) {
 		if ( $field->get_param_callback_result( 'label_cb', false ) ) {
 			echo '<div class="cmb-th">', esc_attr($field->peform_param_callback( 'label_cb' )), '</div>';
 		}
-		echo '<div class="cmb-td"><span class="tcf-categories-breadcrumb"></span><span class="tcf-add-category-done btn button">'.__( 'Use selected category', 'terraclassifieds' ).'</span><span class="tcf-change-category-button btn button">'.__( 'Change category', 'terraclassifieds' ).'</span><span class="tcf-add-category-button btn button">'.__( 'Choose  category', 'terraclassifieds' ).'</span>';
+		
+		if ($post_slug !== $page_edit_ad_slug) {
+			echo '<div class="cmb-td"><span class="tcf-categories-breadcrumb"></span><span class="tcf-add-category-done btn button">'.__( 'Use selected category', 'terraclassifieds' ).'</span><span class="tcf-change-category-button btn button">'.__( 'Change category', 'terraclassifieds' ).'</span><span class="tcf-add-category-button btn button">'.__( 'Choose  category', 'terraclassifieds' ).'</span>';
+		}else{
+			echo '<div class="cmb-td"><span class="tcf-categories-breadcrumb"></span>';
+		}
 	}
 
 	$field->peform_param_callback( 'before' );
