@@ -57,7 +57,8 @@ if (!class_exists('Terraclassifieds')) {
 			add_action('wp_enqueue_scripts', array($this, 'frontendStyles'));
 
 			add_action('admin_enqueue_scripts', array($this, 'adminStyles'));
-
+			add_action('admin_menu', array($this, 'terraclassifieds_generate_payments_admin_menu_item'));
+			
 			include self::$path . 'inc/functions/cron-functions.php';
 
 			require_once(self::$path . 'captcha/autoload.php'); // recaptcha
@@ -367,6 +368,16 @@ if (!class_exists('Terraclassifieds')) {
 				PRIMARY KEY  (id)
 			) $charset_collate;";
 		    dbDelta($sql_payments_items);
+		}
+		
+		/* Create admin menu position for view lwith payments list */
+		function terraclassifieds_generate_payments_admin_menu_item() {
+			$parent_slug = 'edit.php?post_type=classified';
+			$menu_title = esc_html__( 'Payments');
+			$capability  = 'manage_options';
+			$menu_slug  = 'payments-list';
+			$function  = 'payments_list';
+			add_submenu_page($parent_slug,$menu_title,$menu_title,$capability, $menu_slug , $function, 0);
 		}
 	}
 }
