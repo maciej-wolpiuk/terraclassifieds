@@ -249,14 +249,6 @@ register_taxonomy(
 	)
 );
 
-/* Ads Payments */
-$parent_slug = 'edit.php?post_type=classified';
-$menu_title = esc_html__( 'Payments');
-$capability  = 'manage_options';
-$menu_slug  = 'payments-list';
-$function  = 'payments_list';
-add_submenu_page($parent_slug,$menu_title,$menu_title,$capability, $menu_slug , $function);
-
 /* Custom fields for ad */
 add_action( 'cmb2_init', 'terra_custom_fields' );
 if (!function_exists('terra_custom_fields')) {
