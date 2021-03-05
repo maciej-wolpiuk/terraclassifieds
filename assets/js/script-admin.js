@@ -138,7 +138,6 @@
 			$('._tc_monetizing_vat_rate_settings_item').toggle();
 		});
 		
-		
 		if( $('#_tc_monetizing_use_offline_payment2').is(':checked')) {
 	        $('div.cmb2-id--tc-monetizing-use-offline-payment-information').show();
 			$('div.cmb2-id--tc-monetizing-offline-payment-logo').show();
@@ -208,6 +207,7 @@
 			}else if($(this).attr('id') == '_tc_monetizing_charging_for_adding_ads_price1') {
 				$('#_tc_monetizing_charging_for_adding_ads_price_fixed').val(0);
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category').show();
+				//$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').show();
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category_input input').each(function() {
 					$(this).val('');
 				});
@@ -359,9 +359,12 @@
 					$(".cmb2-id--tc-monetizing-charging-for-adding-ads-price-fixed").show();
 				}
 			}
+			//$('.cmb2-id--tc-monetizing-charging-for-adding-ads-price').toggle();
+			//$(this).find('p').toggle();
 		});
 		
 		$('#-tc-monetizing-payment-methods-title').trigger('click');
+		//$('#-tc-monetizing-charging-options-title').trigger('click');
 		
 		$('.tc_monetizing_charging_for_adding_ads_price_per_category_input').each(function() {
 			$(this).hide();
