@@ -282,7 +282,6 @@
 		
 		var charging_options_close = true;
 		$('#-tc-monetizing-charging-options-title').on('click', function() {
-			console.log(charging_for_adding_ads_title_close);
 			charging_options_close = !charging_options_close;
 			if (charging_options_close) {
 				$('span._tc_monetizing_charging_options_settings_chevron').html('<i class="fas fa-chevron-down"></i>');
@@ -327,7 +326,6 @@
 		var charging_for_adding_ads_title_close = false;
 		$('.cmb2-id--tc-monetizing-charging-for-adding-ads-title').on('click', function() {
 			charging_for_adding_ads_title_close = !charging_for_adding_ads_title_close;
-			console.log(charging_for_adding_ads_title_close);
 			if (charging_for_adding_ads_title_close) {
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category').hide();
 				$('.tc_monetizing_charging_for_adding_ads_price_per_category').each(function() {
