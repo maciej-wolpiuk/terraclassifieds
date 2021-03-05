@@ -138,17 +138,22 @@
 			$('._tc_monetizing_vat_rate_settings_item').toggle();
 		});
 		
+		
 		if( $('#_tc_monetizing_use_offline_payment2').is(':checked')) {
 	        $('div.cmb2-id--tc-monetizing-use-offline-payment-information').show();
+			$('div.cmb2-id--tc-monetizing-offline-payment-logo').show();
 	    }else{
 			$('div.cmb2-id--tc-monetizing-use-offline-payment-information').hide();
+			$('div.cmb2-id--tc-monetizing-offline-payment-logo').hide();
 		}
 		
 		$(".cmb2-id--tc-monetizing-use-offline-payment input").click(function(){
 			if($(this).attr('id') == '_tc_monetizing_use_offline_payment1') {
-				$('div.cmb2-id--tc-monetizing-use-offline-payment-information').hide();		
+				$('div.cmb2-id--tc-monetizing-use-offline-payment-information').hide();
+				$('div.cmb2-id--tc-monetizing-offline-payment-logo').hide();				
 			}else{
 				$('div.cmb2-id--tc-monetizing-use-offline-payment-information').show();
+				$('div.cmb2-id--tc-monetizing-offline-payment-logo').show();
 			}
 		});
 		
@@ -160,7 +165,7 @@
 			$('.cmb2-id--tc-monetizing-paypal-payment-return-cancel-url').show();
 			$('.cmb2-id--tc-monetizing-paypal-payment-return-notify-url').show();
 			$('.cmb2-id--tc-monetizing-paypal-payment-sumbit-button').show();
-			
+			$('.cmb2-id--tc-monetizing-paypal-payment-logo').show();
 	    }else{
 			$('.cmb2-id--tc-monetizing-paypal-payment-business-email-id').hide();		
 			$('.cmb2-id--tc-monetizing-paypal-payment-test-mode').hide();
@@ -169,6 +174,7 @@
 			$('.cmb2-id--tc-monetizing-paypal-payment-return-cancel-url').hide();
 			$('.cmb2-id--tc-monetizing-paypal-payment-return-notify-url').hide();
 			$('.cmb2-id--tc-monetizing-paypal-payment-sumbit-button').hide();
+			$('.cmb2-id--tc-monetizing-paypal-payment-logo').hide();	
 		}
 		
 		$(".cmb2-id--tc-monetizing-use-paypal-payment input").click(function(){
@@ -180,6 +186,7 @@
 				$('.cmb2-id--tc-monetizing-paypal-payment-return-cancel-url').hide();
 				$('.cmb2-id--tc-monetizing-paypal-payment-return-notify-url').hide();
 				$('.cmb2-id--tc-monetizing-paypal-payment-sumbit-button').hide();
+				$('.cmb2-id--tc-monetizing-paypal-payment-logo').hide();
 			}else{
 				$('.cmb2-id--tc-monetizing-paypal-payment-business-email-id').show();		
 				$('.cmb2-id--tc-monetizing-paypal-payment-test-mode').show();
@@ -188,7 +195,7 @@
 				$('.cmb2-id--tc-monetizing-paypal-payment-return-cancel-url').show();
 				$('.cmb2-id--tc-monetizing-paypal-payment-return-notify-url').show();
 				$('.cmb2-id--tc-monetizing-paypal-payment-sumbit-button').show();
-				
+				$('.cmb2-id--tc-monetizing-paypal-payment-logo').show();
 			}
 		});
 		
